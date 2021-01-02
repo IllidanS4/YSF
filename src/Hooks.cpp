@@ -337,7 +337,7 @@ Packet* THISCALL CHookRakServer::Receive(void* ppRakServer)
 			case ID_STATS_UPDATE:
 			{
 				CSAMPFunctions::Packet_StatsUpdate(p);
-				CCallbackManager::OnPlayerStatsAndWeaponsUpdate(playerid);
+				CCallbackManager::OnPlayerStatsUpdate(playerid);
 
 				if(p->data && p->length >= 1)
 				{
@@ -348,7 +348,7 @@ Packet* THISCALL CHookRakServer::Receive(void* ppRakServer)
 			case ID_WEAPONS_UPDATE:
 			{
 				CSAMPFunctions::Packet_WeaponsUpdate(p);
-				CCallbackManager::OnPlayerStatsAndWeaponsUpdate(playerid);
+				CCallbackManager::OnPlayerWeaponsUpdate(playerid);
 				
 				if(p->data && p->length >= 1)
 				{
